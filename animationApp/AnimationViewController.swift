@@ -22,7 +22,7 @@ class AnimationViewController: UIViewController {
         springAnimationView.layer.cornerRadius = 10
     }
     
-    func getParameters(animation: Animation) {
+    func getAnimationParameters(animation: Animation) {
         animationParameterLabel.text = """
         Animation Type: \(animation.animation)
         Curve: \(animation.curve)
@@ -46,61 +46,61 @@ class AnimationViewController: UIViewController {
         case Animation.animationType.pop.rawValue:
             let pop = Animation(animation: "pop")
             
-            getParameters(animation: pop)
+            getAnimationParameters(animation: pop)
             startAnimation(animation: pop)
             
         case Animation.animationType.shake.rawValue:
             let shake = Animation(animation: "shake")
             
-            getParameters(animation: shake)
+            getAnimationParameters(animation: shake)
             startAnimation(animation: shake)
             
         case Animation.animationType.fall.rawValue:
             let fall = Animation(animation: "fall")
             
-            getParameters(animation: fall)
+            getAnimationParameters(animation: fall)
             startAnimation(animation: fall)
             
         case Animation.animationType.flash.rawValue:
             let flash = Animation(animation: "flash")
             
-            getParameters(animation: flash)
+            getAnimationParameters(animation: flash)
             startAnimation(animation: flash)
             
         case Animation.animationType.wobble.rawValue:
             let wobble = Animation(animation: "wobble")
             
-            getParameters(animation: wobble)
+            getAnimationParameters(animation: wobble)
             startAnimation(animation: wobble)
             
         case Animation.animationType.swing.rawValue:
             let swing = Animation(animation: "swing")
             
-            getParameters(animation: swing)
+            getAnimationParameters(animation: swing)
             startAnimation(animation: swing)
             
         case Animation.animationType.squeeze.rawValue:
             let squeeze = Animation(animation: "squeeze")
             
-            getParameters(animation: squeeze)
+            getAnimationParameters(animation: squeeze)
             startAnimation(animation: squeeze)
             
         case Animation.animationType.flipX.rawValue:
             let flipX = Animation(animation: "flipX")
             
-            getParameters(animation: flipX)
+            getAnimationParameters(animation: flipX)
             startAnimation(animation: flipX)
             
         case Animation.animationType.flipY.rawValue:
             let flipY = Animation(animation: "flipY")
             
-            getParameters(animation: flipY)
+            getAnimationParameters(animation: flipY)
             startAnimation(animation: flipY)
             
         default:
             let morph = Animation(animation: "morph")
             
-            getParameters(animation: morph)
+            getAnimationParameters(animation: morph)
             startAnimation(animation: morph)
         }
     }
