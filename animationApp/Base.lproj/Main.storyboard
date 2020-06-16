@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Animation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AnimationViewController" customModule="animationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLK-VB-mdh" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="40" y="40" width="240" height="148"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="99m-mG-NOu"/>
+                                    <constraint firstAttribute="width" constant="240" id="99q-5n-XVu"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mM9-CX-amx">
+                                <rect key="frame" x="40" y="418" width="240" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="efS-tF-N12"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBa-cR-hLf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNq-eL-r6z">
+                                <rect key="frame" x="40" y="204" width="240" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5KK-UF-u1y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.97998047998059301" blue="0.73237452233393463" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mM9-CX-amx" firstAttribute="width" secondItem="wLK-VB-mdh" secondAttribute="width" id="2JP-Pj-nMs"/>
+                            <constraint firstItem="mM9-CX-amx" firstAttribute="top" secondItem="ZNq-eL-r6z" secondAttribute="bottom" constant="101" id="2tO-1P-G1z"/>
+                            <constraint firstItem="mM9-CX-amx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5BX-cK-V6d"/>
+                            <constraint firstItem="wLK-VB-mdh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="5u3-dS-eJu"/>
+                            <constraint firstItem="wLK-VB-mdh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LQ3-Lh-ni0"/>
+                            <constraint firstItem="ZNq-eL-r6z" firstAttribute="top" secondItem="wLK-VB-mdh" secondAttribute="bottom" constant="16" id="R1v-Yq-NFG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mM9-CX-amx" secondAttribute="bottom" constant="120" id="XpV-9J-KY7"/>
+                            <constraint firstItem="ZNq-eL-r6z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fR5-ZU-AlG"/>
+                            <constraint firstItem="ZNq-eL-r6z" firstAttribute="width" secondItem="wLK-VB-mdh" secondAttribute="width" id="nDr-sW-nO4"/>
+                            <constraint firstItem="mM9-CX-amx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wLK-VB-mdh" secondAttribute="bottom" constant="230" id="wMR-IM-jNI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="animationButton" destination="mM9-CX-amx" id="PR0-Bf-CwS"/>
+                        <outlet property="animationParameterLabel" destination="ZNq-eL-r6z" id="zGE-6n-R55"/>
+                        <outlet property="springAnimationView" destination="wLK-VB-mdh" id="Ujw-hk-ApL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="116.19718309859155"/>
         </scene>
     </scenes>
 </document>
